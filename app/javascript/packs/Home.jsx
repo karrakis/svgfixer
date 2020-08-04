@@ -6,7 +6,7 @@ export const Home = ({data}) => {
     const [boundaryXY, updateBoundaryXY] = useState([])
     
     return (<div className="w-screen h-screen flex items-center justify-center bg-gray-800 opacity-50">
-        <Boundary boundaryXY={boundaryXY} updateBoundaryXY={updateBoundaryXY}/>
+        <Boundary boundaryXY={boundaryXY} updateBoundaryXY={updateBoundaryXY} svg={localStorage["svg"]}/>
         <Uploader/>
     </div>)
 }

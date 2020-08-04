@@ -12,7 +12,7 @@ const getBase64 = (file) => {
 const imageUpload = (e) => {
     const file = e.target.files[0];
     getBase64(file).then(base64 => {
-        localStorage["fileBase64"] = base64;
+        localStorage["svg"] = base64;
         console.debug("file stored", base64);
     })
 }

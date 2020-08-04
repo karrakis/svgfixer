@@ -4,8 +4,8 @@ const displayXY = (x,y) => {
     return <div className="flex flex-col"><span>{x}</span><span>{y}</span></div>
 }
 
-export const Boundary = ({boundaryXY, updateBoundaryXY}) => {
-    console.log(boundaryXY)
+export const Boundary = ({boundaryXY, updateBoundaryXY, svg}) => {
+    console.log(svg)
     useEffect(() => {
         const resizeHandler = (e) => {
             updateBoundaryXY([e.target.offsetWidth, e.target.offsetHeight])
@@ -18,8 +18,9 @@ export const Boundary = ({boundaryXY, updateBoundaryXY}) => {
     }, [updateBoundaryXY])
 
     return (
-        <div id="boundary" className="resize overflow-auto w-32 h-32 bg-white shadow-inner flex flex-col justify-center items-center">
-            <span className="my-4">{displayXY(...boundaryXY)}</span>
+        <div id="boundary" className="resize overflow-auto w-32 h-32 bg-white shadow-inner flex flex-col justify-center items-center" style={{
+            backgroundImage: `url(${svg})`
+        }}>
         </div>
     )
 }
