@@ -5,10 +5,9 @@ const displayXY = (x,y) => {
 }
 
 export const Boundary = ({boundaryXY, updateBoundaryXY, svg}) => {
-    console.log(svg)
     useEffect(() => {
         const resizeHandler = (e) => {
-            updateBoundaryXY([e.target.offsetWidth, e.target.offsetHeight])
+            updateBoundaryXY({x: e.target.offsetWidth, y: e.target.offsetHeight})
         }
         document.getElementById("boundary").addEventListener('mouseup', resizeHandler)
 
